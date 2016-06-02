@@ -36,7 +36,7 @@ namespace CSR_Project
             ///////
             //This function is to generate MAC for the content of the Folder´s Content
             ///////
-            if (checkKeyValue())
+            if (checkKeyValue()) //To check of the encryption key is provided
             {
                 string key = textBox2.Text; //The key used for hashing
 
@@ -76,7 +76,7 @@ namespace CSR_Project
             ///////
             //This function is to generate MAC for the content of each file
             ///////
-            if (checkKeyValue())
+            if (checkKeyValue()) //To check of the encryption key is provided
             {
                 string key = textBox2.Text; //The key used for hashing
 
