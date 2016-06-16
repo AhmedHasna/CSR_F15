@@ -33,11 +33,13 @@ namespace CSR_Project
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.VerificateFolderMac = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.FlashMeoryPathTextBox = new System.Windows.Forms.TextBox();
+            this.browseFldashMemoryBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -67,15 +69,15 @@ namespace CSR_Project
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // VerificateFolderMac
             // 
-            this.button3.Location = new System.Drawing.Point(273, 138);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 33);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "تحقق من كود الوثوقية للمجلد";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.VerificateFolderMac.Location = new System.Drawing.Point(273, 138);
+            this.VerificateFolderMac.Name = "VerificateFolderMac";
+            this.VerificateFolderMac.Size = new System.Drawing.Size(155, 33);
+            this.VerificateFolderMac.TabIndex = 3;
+            this.VerificateFolderMac.Text = "تحقق من كود الوثوقية للمجلد";
+            this.VerificateFolderMac.UseVisualStyleBackColor = true;
+            this.VerificateFolderMac.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -109,20 +111,39 @@ namespace CSR_Project
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(378, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 13);
+            this.label2.Size = new System.Drawing.Size(119, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "حدد قيمة مفتاح التشفير";
+            // 
+            // FlashMeoryPathTextBox
+            // 
+            this.FlashMeoryPathTextBox.Location = new System.Drawing.Point(12, 198);
+            this.FlashMeoryPathTextBox.Name = "FlashMeoryPathTextBox";
+            this.FlashMeoryPathTextBox.Size = new System.Drawing.Size(356, 20);
+            this.FlashMeoryPathTextBox.TabIndex = 10;
+            // 
+            // browseFldashMemoryBtn
+            // 
+            this.browseFldashMemoryBtn.Location = new System.Drawing.Point(374, 191);
+            this.browseFldashMemoryBtn.Name = "browseFldashMemoryBtn";
+            this.browseFldashMemoryBtn.Size = new System.Drawing.Size(116, 33);
+            this.browseFldashMemoryBtn.TabIndex = 9;
+            this.browseFldashMemoryBtn.Text = "تحديد الفلاشة";
+            this.browseFldashMemoryBtn.UseVisualStyleBackColor = true;
+            this.browseFldashMemoryBtn.Click += new System.EventHandler(this.browseFldashMemoryBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 198);
+            this.ClientSize = new System.Drawing.Size(502, 265);
+            this.Controls.Add(this.FlashMeoryPathTextBox);
+            this.Controls.Add(this.browseFldashMemoryBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.VerificateFolderMac);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -144,11 +165,13 @@ namespace CSR_Project
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button VerificateFolderMac;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox FlashMeoryPathTextBox;
+        private System.Windows.Forms.Button browseFldashMemoryBtn;
     }
 }
 
