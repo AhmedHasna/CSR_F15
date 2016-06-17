@@ -44,5 +44,5 @@ Syrian Virtual University
 3.	موارد مادة التعمية  (برنامج ISE)
 4.	المواقع التخصصية على الانترنت.
 
-![alt tag](https://s31.postimg.org/3osta8z9z/Capture.png)
-![alt tag](https://s31.postimg.org/5fbubqgt3/Capture2.png)
+![alt tag](https://s31.postimg.org/hv8k5ha57/Capture.png)
+![alt tag](https://s31.postimg.org/u8lecdztn/Capture2.png)
