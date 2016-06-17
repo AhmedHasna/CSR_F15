@@ -60,7 +60,7 @@ namespace CSR_Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(378, 54);
+            this.label2.Location = new System.Drawing.Point(371, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 13);
             this.label2.TabIndex = 8;
@@ -68,19 +68,19 @@ namespace CSR_Project
             // 
             // FlashMeorytxt
             // 
-            this.FlashMeorytxt.Location = new System.Drawing.Point(12, 198);
+            this.FlashMeorytxt.Location = new System.Drawing.Point(12, 205);
             this.FlashMeorytxt.Name = "FlashMeorytxt";
-            this.FlashMeorytxt.Size = new System.Drawing.Size(356, 20);
+            this.FlashMeorytxt.Size = new System.Drawing.Size(308, 20);
             this.FlashMeorytxt.TabIndex = 10;
             // 
             // browseFldashMemoryBtn
             // 
-            this.browseFldashMemoryBtn.Image = global::CSR_Project.Properties.Resources.usb_memory;
+            this.browseFldashMemoryBtn.Image = global::CSR_Project.Properties.Resources.usb;
             this.browseFldashMemoryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.browseFldashMemoryBtn.Location = new System.Drawing.Point(374, 191);
+            this.browseFldashMemoryBtn.Location = new System.Drawing.Point(326, 198);
             this.browseFldashMemoryBtn.Name = "browseFldashMemoryBtn";
             this.browseFldashMemoryBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.browseFldashMemoryBtn.Size = new System.Drawing.Size(116, 33);
+            this.browseFldashMemoryBtn.Size = new System.Drawing.Size(134, 33);
             this.browseFldashMemoryBtn.TabIndex = 9;
             this.browseFldashMemoryBtn.Text = "تحديد الفلاشة";
             this.browseFldashMemoryBtn.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@ namespace CSR_Project
             // 
             // button5
             // 
-            this.button5.Image = global::CSR_Project.Properties.Resources.completed_tasks;
+            this.button5.Image = global::CSR_Project.Properties.Resources.shield;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(44, 136);
+            this.button5.Location = new System.Drawing.Point(35, 143);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.button5.Size = new System.Drawing.Size(207, 33);
@@ -101,9 +101,9 @@ namespace CSR_Project
             // 
             // button4
             // 
-            this.button4.Image = global::CSR_Project.Properties.Resources.index_folder;
+            this.button4.Image = global::CSR_Project.Properties.Resources.folder_1;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(44, 97);
+            this.button4.Location = new System.Drawing.Point(35, 95);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.button4.Size = new System.Drawing.Size(207, 33);
@@ -114,9 +114,9 @@ namespace CSR_Project
             // 
             // VerificateFolderMacBtn
             // 
-            this.VerificateFolderMacBtn.Image = global::CSR_Project.Properties.Resources.safe_shield_protection;
+            this.VerificateFolderMacBtn.Image = global::CSR_Project.Properties.Resources.shield;
             this.VerificateFolderMacBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.VerificateFolderMacBtn.Location = new System.Drawing.Point(271, 136);
+            this.VerificateFolderMacBtn.Location = new System.Drawing.Point(262, 143);
             this.VerificateFolderMacBtn.Name = "VerificateFolderMacBtn";
             this.VerificateFolderMacBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.VerificateFolderMacBtn.Size = new System.Drawing.Size(198, 33);
@@ -127,9 +127,9 @@ namespace CSR_Project
             // 
             // GenerateCodeBtn
             // 
-            this.GenerateCodeBtn.Image = global::CSR_Project.Properties.Resources.folder_and_two_gears_in_black_silhouettes;
+            this.GenerateCodeBtn.Image = global::CSR_Project.Properties.Resources.browser;
             this.GenerateCodeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GenerateCodeBtn.Location = new System.Drawing.Point(271, 97);
+            this.GenerateCodeBtn.Location = new System.Drawing.Point(262, 95);
             this.GenerateCodeBtn.Name = "GenerateCodeBtn";
             this.GenerateCodeBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.GenerateCodeBtn.Size = new System.Drawing.Size(198, 33);
@@ -140,7 +140,7 @@ namespace CSR_Project
             // 
             // SelectFolderBtn
             // 
-            this.SelectFolderBtn.Image = global::CSR_Project.Properties.Resources.folder_black_silhouette_symbol1;
+            this.SelectFolderBtn.Image = global::CSR_Project.Properties.Resources.folders;
             this.SelectFolderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SelectFolderBtn.Location = new System.Drawing.Point(374, 5);
             this.SelectFolderBtn.Name = "SelectFolderBtn";

@@ -160,6 +160,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="locked_1_.ico" />
+    <None Include="Resources\usb.png" />
+    <None Include="Resources\safe-zone.png" />
+    <None Include="Resources\shield.png" />
+    <None Include="Resources\folder-1.png" />
+    <None Include="Resources\browser.png" />
+    <None Include="Resources\folders.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

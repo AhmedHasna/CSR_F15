@@ -4,9 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography; // مكتبة التعمية
 using Newtonsoft.Json; // مكتبة التعامل مع json
-
-
-
+using System.Collections.Generic;
 
 namespace CSR_Project
 {
@@ -37,7 +35,7 @@ namespace CSR_Project
             /////// ==========================================
             //This code for saving the MAC on Flash Memory
             if (FolderMac() == null) return;
-             UserFolder uf = new UserFolder
+            UserFolder uf = new UserFolder
             {
                 folderName = FolderPathtxt.Text, // اسم المجلد
                 folderMac = FolderMac(), // الكود
@@ -52,30 +50,25 @@ namespace CSR_Project
             File.WriteAllText(JsonFilePath, json);
             MessageBox.Show("تم توليد كود الوثوقية على الفلاشة");
             ///////
-
         }
 
         // توليد كود وثوقية للملفات ------------------------------------------------
         private void button4_Click(object sender, EventArgs e)
         {
             ///////
-            //This function is to generate MAC for the content of each file
+            // This function is to generate MAC for the content of each file
             ///////
             if (checkKeyValue()) //To check of the encryption key is provided
             {
                 string key = this.keytxt.Text; //The key used for hashing قيمة مفتاح التشفير
-
                 ASCIIEncoding encoding = new ASCIIEncoding();
-
                 byte[] keyByte = encoding.GetBytes(key); //The key is transformed into array of Bytes
-
                 HMACMD5 hmacmd5 = new HMACMD5(keyByte);
-
                 if (checkFolderPath())  //To check if the folder is provided and not empty
                 {
                     string[] files = Directory.GetFiles(FolderPathtxt.Text);
-
                     System.Windows.Forms.MessageBox.Show("يوجد: " + files.Length.ToString() + "ملف ", "عدد الملفات"); //Showing the No. of Files
+                    List<UserFile> listuf = new List<UserFile>(); // قائمة الملفات
 
                     foreach (string currentFile in files) //Looping for each file of the folder
                     {
@@ -84,24 +77,37 @@ namespace CSR_Project
                         byte[] hashMessage = hmacmd5.ComputeHash(messageBytes); // To compute the Hash
                         string macMessage = ByteToString(hashMessage); //Transform from byte to string using ByteToString Function
                         // MessageBox.Show("MAC for the file: " + currentFile + " content is: \n" + macMessage, "كود الوثوقية"); //To show the MAC of the content for each file
+                        UserFile f = new UserFile
+                        {
+                            FileName = currentFile,
+                            FileMac = macMessage,
+                            key = keytxt.Text
+                        };
+                        listuf.Add(f); // إضافة الملف إلى القائمة
                     }
+                    //This code for saving the MAC on Flash Memory
+                    ///////
+                    //This code for saving the MAC on Flash Memory
+
+                    /*  convert the list of user folder to json: فيما يلي التحويل إلى جي سون */
+                    string json = JsonConvert.SerializeObject(listuf);
+                    string JsonFilePath = FlashMeorytxt.Text + "\\csr_files.json";
+                    // MessageBox.Show(JsonFilePath);
+                    File.WriteAllText(JsonFilePath, json);
+                    MessageBox.Show("تم توليد كود الوثوقية على الفلاشة");
+                    ///////
                 }
-                //This code for saving the MAC on Flash Memory
-                ///////
-                //
-                ///////
+
             }
         }
 
-        // تحقق من كود الوثوقية للمجلد
+        // تحقق من كود الوثوقية للمجلد ------------------------------------------------
         private void button3_Click(object sender, EventArgs e)
         {
-            
             ///////
             //This function is to read the MAC of folder content which is stored on the Flash Memory
             ///////==================================
             if (!checkFolderPath()) return;
-
 
             // read object from the file قراء ملف جي سون
             string json_read = File.ReadAllText(FlashMeorytxt.Text + "\\csr.json");
@@ -117,18 +123,79 @@ namespace CSR_Project
                 MessageBox.Show("تطابق, المجلد آمن ولم يحصل عليه أي تغيير");
             else MessageBox.Show("عدم تطابق, هناك تغيير في المجلد");
             ////
-            //reading from flash
+            // end reading from flash
         }
 
 
-        // تحقق من كود الوثوقية للملفات
+        // تحقق من كود الوثوقية للملفات ------------------------------------------------
         private void button5_Click(object sender, EventArgs e)
         {
-            ///////
-            //This function is to read the MAC of the files which is stored on the Flash Memory
-            ///////
-            checkFolderPath();
-            //reading from flash
+            if (checkKeyValue()) //To check of the encryption key is provided
+            {
+                string key = this.keytxt.Text; //The key used for hashing قيمة مفتاح التشفير
+                ASCIIEncoding encoding = new ASCIIEncoding();
+                byte[] keyByte = encoding.GetBytes(key); //The key is transformed into array of Bytes
+                HMACMD5 hmacmd5 = new HMACMD5(keyByte);
+                if (checkFolderPath())  //To check if the folder is provided and not empty
+                {
+                    string[] files = Directory.GetFiles(FolderPathtxt.Text);
+                    // System.Windows.Forms.MessageBox.Show("يوجد: " + files.Length.ToString() + "ملف ", "عدد الملفات"); //Showing the No. of Files
+                    List<UserFile> listuf = new List<UserFile>(); // قائمة الملفات
+
+                    foreach (string currentFile in files) //Looping for each file of the folder
+                    {
+                        string text = File.ReadAllText(currentFile, Encoding.UTF8); //To read the file content
+                        byte[] messageBytes = encoding.GetBytes(text); //Transforming the file (string) to array of Bytes
+                        byte[] hashMessage = hmacmd5.ComputeHash(messageBytes); // To compute the Hash
+                        string macMessage = ByteToString(hashMessage); //Transform from byte to string using ByteToString Function
+                        // MessageBox.Show("MAC for the file: " + currentFile + " content is: \n" + macMessage, "كود الوثوقية"); //To show the MAC of the content for each file
+                        UserFile f = new UserFile
+                        {
+                            FileName = currentFile,
+                            FileMac = macMessage,
+                            key = keytxt.Text
+                        };
+                        listuf.Add(f); // إضافة الملف إلى القائمة
+                    }
+                    //This code for saving the MAC on Flash Memory
+                    ///////
+                    //This code for saving the MAC on Flash Memory
+
+                    /*  convert the list of user folder to json: فيما يلي التحويل إلى جي سون */
+                    string json = JsonConvert.SerializeObject(listuf);
+                    string JsonFilePath = FlashMeorytxt.Text + "\\csr_files.json";
+                    // MessageBox.Show(JsonFilePath);
+                    File.WriteAllText(JsonFilePath, json);
+                    MessageBox.Show("تم توليد كود الوثوقية على الفلاشة");
+                    ///////
+                }
+            }
+
+
+
+
+
+
+
+            // read object from the file قراء ملف جي سون
+            string json_read = File.ReadAllText(FlashMeorytxt.Text + "\\csr_files.json");
+            // deserialize the object 
+            UserFile data = JsonConvert.DeserializeObject<UserFile>(json_read);
+
+            // assign data to local variables:
+            string FileName = data.FileName;
+            string FileMac = data.FileMac;
+            string filekey = data.key;
+
+            /*
+             * if (FloderMac == FolderMac())
+                MessageBox.Show("تطابق, المجلد آمن ولم يحصل عليه أي تغيير");
+            else MessageBox.Show("عدم تطابق, هناك تغيير في المجلد");
+            */
+
+
+
+
         }
 
         //  التحقق من وجود ملفات في لمجلد المختار
@@ -181,11 +248,11 @@ namespace CSR_Project
 
         }
 
-        // استعراض المجلدات لتحديد الفلاشة
+        // استعراض المجلدات لتحديد الفلاشة ------------------------------------------------
         private void browseFldashMemoryBtn_Click(object sender, EventArgs e)
         {
             // var drives = DriveInfo.GetDrives().Where(drive => drive.IsReady && drive.DriveType == DriveType.Removable);
-            
+
             //This function is to Select a Foder            
             FolderBrowserDialog folderBrwsDlgFlashMemory = new FolderBrowserDialog();
             folderBrwsDlgFlashMemory.ShowDialog();
