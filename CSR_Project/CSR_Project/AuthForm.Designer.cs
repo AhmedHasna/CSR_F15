@@ -41,7 +41,10 @@ namespace CSR_Project
             this.VerificateFolderMacBtn = new System.Windows.Forms.Button();
             this.GenerateCodeBtn = new System.Windows.Forms.Button();
             this.SelectFolderBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // FolderPathtxt
@@ -55,13 +58,13 @@ namespace CSR_Project
             // 
             this.keytxt.Location = new System.Drawing.Point(12, 50);
             this.keytxt.Name = "keytxt";
-            this.keytxt.Size = new System.Drawing.Size(345, 20);
+            this.keytxt.Size = new System.Drawing.Size(322, 20);
             this.keytxt.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(371, 57);
+            this.label2.Location = new System.Drawing.Point(340, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 13);
             this.label2.TabIndex = 8;
@@ -69,16 +72,16 @@ namespace CSR_Project
             // 
             // FlashMeorytxt
             // 
-            this.FlashMeorytxt.Location = new System.Drawing.Point(12, 205);
+            this.FlashMeorytxt.Location = new System.Drawing.Point(12, 227);
             this.FlashMeorytxt.Name = "FlashMeorytxt";
-            this.FlashMeorytxt.Size = new System.Drawing.Size(308, 20);
+            this.FlashMeorytxt.Size = new System.Drawing.Size(326, 20);
             this.FlashMeorytxt.TabIndex = 10;
             // 
             // browseFldashMemoryBtn
             // 
             this.browseFldashMemoryBtn.Image = global::CSR_Project.Properties.Resources.usb;
             this.browseFldashMemoryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.browseFldashMemoryBtn.Location = new System.Drawing.Point(326, 198);
+            this.browseFldashMemoryBtn.Location = new System.Drawing.Point(356, 220);
             this.browseFldashMemoryBtn.Name = "browseFldashMemoryBtn";
             this.browseFldashMemoryBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.browseFldashMemoryBtn.Size = new System.Drawing.Size(134, 33);
@@ -91,7 +94,7 @@ namespace CSR_Project
             // 
             this.button5.Image = global::CSR_Project.Properties.Resources.shield;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(35, 143);
+            this.button5.Location = new System.Drawing.Point(35, 132);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.button5.Size = new System.Drawing.Size(207, 33);
@@ -104,7 +107,7 @@ namespace CSR_Project
             // 
             this.button4.Image = global::CSR_Project.Properties.Resources.folder_1;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(35, 95);
+            this.button4.Location = new System.Drawing.Point(35, 93);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.button4.Size = new System.Drawing.Size(207, 33);
@@ -117,7 +120,7 @@ namespace CSR_Project
             // 
             this.VerificateFolderMacBtn.Image = global::CSR_Project.Properties.Resources.shield;
             this.VerificateFolderMacBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.VerificateFolderMacBtn.Location = new System.Drawing.Point(262, 143);
+            this.VerificateFolderMacBtn.Location = new System.Drawing.Point(269, 132);
             this.VerificateFolderMacBtn.Name = "VerificateFolderMacBtn";
             this.VerificateFolderMacBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.VerificateFolderMacBtn.Size = new System.Drawing.Size(198, 33);
@@ -130,7 +133,7 @@ namespace CSR_Project
             // 
             this.GenerateCodeBtn.Image = global::CSR_Project.Properties.Resources.browser;
             this.GenerateCodeBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.GenerateCodeBtn.Location = new System.Drawing.Point(262, 95);
+            this.GenerateCodeBtn.Location = new System.Drawing.Point(269, 93);
             this.GenerateCodeBtn.Name = "GenerateCodeBtn";
             this.GenerateCodeBtn.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.GenerateCodeBtn.Size = new System.Drawing.Size(198, 33);
@@ -153,22 +156,44 @@ namespace CSR_Project
             this.SelectFolderBtn.UseVisualStyleBackColor = true;
             this.SelectFolderBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(130, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 171);
+            this.label1.MaximumSize = new System.Drawing.Size(450, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(429, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "عند التحقق من سلامة المجلد أو محتوى الملفات تأكد أنك تستعمل نفس مفتاح التشفير الذ" +
+    "ي استعملته عند توليد كود الوثوقية حتى تحصل على نتيجة صحيحة";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(12, 76);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox1.Size = new System.Drawing.Size(478, 130);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CSR_Project.Properties.Resources.key;
+            this.pictureBox2.Location = new System.Drawing.Point(465, 50);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // AuthFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 265);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.FlashMeorytxt);
             this.Controls.Add(this.browseFldashMemoryBtn);
             this.Controls.Add(this.label2);
@@ -179,6 +204,7 @@ namespace CSR_Project
             this.Controls.Add(this.GenerateCodeBtn);
             this.Controls.Add(this.FolderPathtxt);
             this.Controls.Add(this.SelectFolderBtn);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(518, 303);
@@ -189,6 +215,7 @@ namespace CSR_Project
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تأمين سلامة مجلد";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,7 +238,9 @@ namespace CSR_Project
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox FlashMeorytxt;
         private System.Windows.Forms.Button browseFldashMemoryBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

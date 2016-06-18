@@ -22,4 +22,7 @@ namespace CSR_Project
         public string FileMac { get; set; } // كود الوثوقية
         public string key { get; set; } // المفتاح السري
     }
+
+    
+
 }
